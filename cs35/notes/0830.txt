@@ -1,0 +1,25 @@
+2022.08.30.
+
+types of languages
+    interpreted
+        e.g. python
+        source -> interpreter -> output
+    compiled
+        e.g. c, c++, java
+        source -> compiler -> executable program -> output
+    
+Comparison
+    feature                 python              c++
+    declare var             n/a                 <type> <name>;
+    end of statement        n/a                 ;
+    code block              indentation         { ... }
+    multiline comments      """ ... """         /* ... */
+    single-line comment     # ...               // ... 
+    main                    call main           don't call main
+                            no return val       returns int (o : "ok"; everything else : problem)
+    libraries               import <lib>        #include <lib>
+    print                   print()             cout
+    input                   ipnut()             cin
+
+
+
