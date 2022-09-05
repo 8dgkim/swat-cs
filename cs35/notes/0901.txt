@@ -1,0 +1,68 @@
+2022.09.01.
+
+
+Lots of C++
+- while, for, functions
+- fundamental C++ types
+- pointers
+- arrays
+- dynamic arrays
+- memory management
+- stack diagram
+
+
+Function
+    can be defined before main
+    OR
+    give a fn prototype before main and fn def later
+
+    prototype :
+        <return type> <fn name> (<parameter> <parameter name>);
+
+Types
+    int, short, long
+    float, double
+    string
+    bool
+    char
+    void
+
+
+Pointer
+    every var is stored somewhere specific (= address) in the computer's memory
+
+    To obtain the address of a var, do
+        & <variable name>
+    
+    For any type T, we can declare a pointer to a var of that type by doing
+        T * <pointer name>
+
+    dereference a pointer to see what value is by doing
+        * <pointer name>
+
+Array
+    collection of elements of the same type
+    declare an array of type T, with N elements,
+        T <name> [N];
+
+    each element inferenced by index, starting at 0
+
+    name of an array is equivalent to a pointer to the first element of the array
+
+    common mistake to AVOID : indexing out-of-bounds
+
+    if we don't know how much memory well need to store the array, C__ lets us dynamically allocate it
+    syntax
+        T * <name> = new T[<size>];
+    this will return an address beginning the memory block of needed size
+    
+    for every new that appears in your program, there should be a corresponding delete to clean up the memory before the program ends.
+    the programmer must manage memory clean up
+        delete [] <array name>;
+
+Stack Diagram
+    a way to trace the creation of a program and its memory allocation
+        each function call adds a new frame to the stack
+        static var are drawn inside stack from where they're declared
+        dynamic var are stacked in heap
+
