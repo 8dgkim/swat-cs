@@ -1,0 +1,21 @@
+2022.09.06.
+
+classes and objects in C++
+
+    objects combine {data, functionality}
+    class describes a type of object
+    an object is a particular instance of a class
+
+why does C++ organize things this way?
+    easy to interact with
+    keep data protected
+
+
+methods
+    getters
+    setters
+    constructor
+        no return type
+
+stack diagrams with objects 
+    every ... includes "this" variable
