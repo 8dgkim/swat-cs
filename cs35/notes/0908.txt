@@ -1,0 +1,42 @@
+2022.09.08.
+
+nullptr
+    int *p;
+    p = nullptr
+    cout << p 하면 0 나옴
+
+destructors
+    default constructor & destructor exist
+
+compiling many files
+    example of having to write many lines
+        clang++ -std=c++11 -c point.cpp -o point.o
+        clang++ -std=c++11 -c main.cpp -o main.o
+        clang++ -std=c++11 main.o point.o -o main
+    Makefile
+
+object-oriented programming (OOP)
+    hierarchical relationships
+        same type different examples
+        common things but differnent characteristics
+        e.g. buildings (dorm; dining hall; library)
+        e.g. dog (Schnauzer; Husky; Bernese)
+            base : bark; name (features common to all dogs)
+            derived : schnauzer(haircut); husky(number of sleds pulled); bernese(contents of rescue barrel)
+
+        parent/base/super class <-> child/derived/sub class
+
+inheritance
+    class inheritance
+    syntax (abstract class)
+        class Dog {
+            public:
+                virtual void bark() = 0;
+        }
+
+
+encapsulation
+polymorphism
+    refers to how a single variable can act as if it is different types
+    in inheritance relationships, a pointer of something
+
