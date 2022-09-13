@@ -1,0 +1,51 @@
+2022.09.13.
+
+
+Test 1
+    next week
+    c++
+
+-----
+
+polymorphism and destructors
+
+new & delete
+    heap memory
+    allocates & deallocates memory to/from heap
+    new -> dynamic memory allocation which puts var on heap memory
+    delete -> destroys array non-array(pointer) objects created by new expression
+        pointer to object not destroyed
+        value or memory block pointed by pointer is destroyed
+
+valgrind
+    checks memory leak
+
+
+-----
+
+
+
+evaluating algorithms
+    empirical analysis
+        want to compare versions to find which is most efficient
+        - run some experiments and time them
+            command : time ./program_name
+        - vary the size of the array
+        clock time is not the cleanest measure hard to control conditions for equal runs
+        can only run on a limited set of values
+        must implement each algorithm to test it
+
+    theoretical analysis
+        - abstract away from a particular language
+        - analyze how much work the algorithm requires
+            work = # of steps
+        - count the # of steps in an algorithm
+        - focus on key steps
+            is_sorted : key step is comparison between elements
+        - let n represent the size of the problem
+
+big-O definition, theoretical analysis
+
+
+
+
