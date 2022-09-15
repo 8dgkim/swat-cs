@@ -1,0 +1,36 @@
+2022.09.15.
+
+
+theoretical analysis
+
+big O notation (= asymptotic notation)
+    let f(n) & g(n) be functions
+    f(n) is O(g(n))
+        if there exist a constant C > 0 & a constant n_0 >= 1
+        such that
+            f(n) <= c * g(n) for all n >= n_0
+    f(n) is asymptotically upper-bounded by g(n)
+
+sorting algorithms
+    problem
+        take unsorted array; sort them in ascending order
+
+    selection sort
+        pseudocode
+            selectSort(array, size)
+                for i = size - 1 down to 1
+                    indexOfMax = findMax(array, i)
+                    swap(array, i, indexOfMax)
+            findMax(array, end)
+                indexOfMax = 0
+                for i = 1 to end
+                    if array[i] > array[indexOfMax]
+                        indexOfMax = i
+                return indexOfMax
+
+    merge sort
+
+
+Test
+    covers C++
+    Study guide
