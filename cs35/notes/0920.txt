@@ -1,0 +1,86 @@
+2022.09.20.
+
+topic of the day
+    big-O review
+    selection sort
+    merge sort
+    guick sort
+    runtimes : worst case, best case, expected
+
+
+
+selection sort
+    O(n^2)
+    in-place  memory : doesn't use extra memory; just edits the original array
+
+merge sort
+    example of divide-and-conquer algorithms
+    
+    recursive structure
+        base case, we solve the porblem without recursion
+        recursive cases, where we use the same approach on smaller subproblems
+            conquer by dividing into subproblems to solve the overall problem
+    
+    pseudocode
+        mergeSort(array, size);
+            if size < 2
+                return
+            copy first half of array into new array B
+            copy second half of array into new array C
+            mergeSort(B, size/2)
+            mergeSort(C, size/2)
+
+            merge(B, size/2, C, size/2, array)
+            // helper function "merge" : two array into sorted order in the original array
+        
+        merge(A, sizeA, B, sizeB, C)
+            i = 0, j = 0, k = 0 // indices for A, B, c
+            while i < sizeA & j < sizeB
+                if A[i] <= B[j]
+                    C[k++] = A[i++] // use value k & i; then increments each of them
+                else
+                    C[k++] = B[j++]
+
+            // handle leftover items if they are in A or B
+            while i < sizeA
+                C[k++] = A[i++]
+            while j < sizeB
+                C[k++] = B[j++]
+    
+    algo class (big O)
+        merge sort : nlog_2(n)
+            O(n) work each level of tree
+            log_2(n) levels exist
+
+    lots of extra memory used
+
+quick sort
+    divide-and-conquer
+
+    pseudocode
+        quickSort(array, i, j) // sorts array[i...j]
+            if j <= i
+                return
+            k = partition(array, i, j)
+            quickSort(array, i, k-1)
+            quickSort(array, k+1, j)
+        
+        partition(array, left, right)
+        // rearranges array[left ... right] using pivot element
+        // should return index where pivot element ends upper
+            pivot = right
+            right--
+            do
+                if array[left] < array[pivot]
+                    left++
+                else if array[right] > array[pivot]
+                    right--
+                else
+                    swap(array, left, right)
+            while(left < right)
+            swap(array, right, pivot)
+            return right
+
+
+
+                
