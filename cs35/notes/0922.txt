@@ -1,0 +1,104 @@
+2022.09.22.
+
+quicksort analysis
+best, wrost, expected big O runtime
+creating generic functions + classes in C++ using templates
+abstract datatypes
+
+quick sort
+    observations
+        memory is in place
+        each call to partition takes linear time
+        overall runtime depends on choice of pivot
+        best pivot choice? best runtime?    
+            best pivot = median
+            --> O(nlogn)
+        worst pivot choice? worst runtime?
+            worst pivot = smallest/largest element
+            always having worst pivot results in linearly many levels of recursion
+            --> O(n^2)
+    how to avoid worst case by adjusting partition fn
+        pseudocode
+            partition(array, left, right)
+                pivot = randomly choose an index in the set (left, left + 1, ..., right)
+                swap(Array, right, pivot)
+                right--
+                while (left <= right)
+                    if array[left] <= array[pivot]
+                        left++
+                    else if array[right] >= array[pivot]
+                        right--
+                    else
+                        swap(array, left, right)
+                swap(array, left, pivot) // put the pivot element into its place
+                return left
+        changed choice of pivot index
+        expected runtime O(nlogn)
+        In practice, usually quicksort is faster than merge sort
+
+mergesort vs quicksort
+    similarities
+        recursion
+        best case O(nlogn)
+        divide & conquer
+    differences
+        quicksort in place
+        worst case
+            quicksort O(n^2)
+            mergesort O(nlogn)
+        ...
+        ...
+
+
+generic functions & classes
+    python
+        write one function
+        use it for many dif types
+    c++
+        specity return type parameter type
+    
+    e.g.
+        template <typename T>
+        T genericMin(T a, T, b) {
+            ...
+        }
+        int main() {
+            cout << genericMin<int>(3, 4);
+            cout << genericMin<string>(x, y);
+
+            cout << genericMin(3.4, 1.2); // ok but risky
+
+            cout << genericMin<float>(3, 1.2); // works
+
+            cout << genericMin(3, 1.2); // doesn't work
+        }
+    
+abstract data types (ADTs)
+    high level overview of what a data structure can do
+        purely abstract superclass
+            no instantiation
+            no constructor
+    to use, create subclass
+
+    list
+        ordered sequence of elements all of same type
+        characteristics
+            know length (size)
+            can use templates
+            avoid out of bound indexing
+            no fixed size
+        
+        e.g.
+            template <typename T>
+            class List {
+                public:
+                    virtual ~List(); // destructor
+                    virtual int getSize() = 0;
+                    virtual void insertLast(T item) = 0;
+                    virtual T removeLast() = 0;
+                    virtual T get(int index) = 0;
+            };
+    
+
+
+

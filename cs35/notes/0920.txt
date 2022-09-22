@@ -70,16 +70,20 @@ quick sort
         // should return index where pivot element ends upper
             pivot = right
             right--
-            do
-                if array[left] < array[pivot]
+            while (left <= right)
+                if array[left] =< array[pivot]
                     left++
-                else if array[right] > array[pivot]
+                else if array[right] >= array[pivot]
                     right--
                 else
                     swap(array, left, right)
-            while(left < right)
-            swap(array, right, pivot)
-            return right
+            swap(array, right, pivot) // put the pivot element into its place
+            return left
+    
+    algo class (big O)
+        quick sort : nlog_2(n)
+            O(n) work each level of tree
+            log_2(n) levels exist
 
 
 
