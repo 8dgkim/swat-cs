@@ -36,6 +36,9 @@ inheritance
 
 
 encapsulation
+    private
+
+
 polymorphism
     refers to how a single variable can act as if it is different types
     in inheritance relationships, a pointer of something

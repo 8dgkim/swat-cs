@@ -1,0 +1,59 @@
+2022.09.27.
+
+List ADT
+    declaration
+        template <typname T>
+        class List {
+            public:
+                virtual ~List; // destructor
+                virtual int getSize() = 0;
+                virtual T get(int i) = 0;
+                ...
+        }
+    we'll think about each list having 
+        first(head) last(tail)
+        elements
+    implement List in two ways
+        ArrayList
+        LinkedList
+
+ArrayList
+    example
+        /home/fontes/public/cs35/week5/ArrayList/arrayList.h
+    two constructors
+        ArrayList();
+        ArrayList(int capacity);
+        runtime
+            both are O(1)
+    destructor
+        safety/sanity check
+            this -> array = nullptr;
+        runtime
+            O(1)
+    get(int i)
+        O(1)
+    void checkInvariants();
+        helpful for users (debugging)
+        idea
+            make sure certain properties ("invariants") are always true
+            for ArrayList w/ specific size & specific capacity,
+                size >= 0
+                size <= capacity
+    void ensureCapacity();
+        helper for implementation
+        runtime
+            O(n)
+        is copying the best policy??
+            seems very inefficient use of memory
+    void insertFirst(T);
+        O(n)
+    void insertLast(T);
+        O(1) ~ O(n) (worst case)
+    T removeFirst();
+    T removeLast();   
+        size--
+        just consider the rest as empty even though there's still value...
+            is this safe?
+        
+
+    
