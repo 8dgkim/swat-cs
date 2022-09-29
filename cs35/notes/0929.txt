@@ -1,0 +1,84 @@
+2022.09.29.
+
+ArrayList
+    necessarily slow?
+        array == block of contiguous memory
+
+LinkedList
+    series of nodes
+    each node contains a value and a pointer to the next node in the list
+
+    LinkedListNode declaration
+        all data == public
+            since LinkedListNdoe == not a standalone class
+    
+    insertFirst pseudocode
+        void insertFirst(T value)
+            ...
+    
+        e.g.
+        List *l = new LinkedList<int>();
+
+        runtime
+            O(1)
+    
+    removeFirst
+        pseudocode
+            if size = 0
+                throw runtime error
+            if size = 1
+                delete node
+                set head & tail to nullptr
+            else
+                save pointer to head
+                move head forward to next node
+                    this -> head = this -> head -> next
+                delete saved pointer
+            size--
+            return saved value
+
+        runtime
+            O(1)
+    
+    removeLast
+        cases
+            if size = 0
+                throw runtime error
+            if size = 1
+                delete node
+                head & tail = nullptr
+            if size >= 2
+                walk down the list & find the second-to-last node
+        
+        case 3
+            pseudocode
+                save tail value
+                p = head
+                // walk down the list to find the penultimate node
+                while (p -> next -> next != nullptr)
+                    p = p -> next
+                // p now points to penultimate node
+                p's next = nullptr
+                delete tail node
+                tail = p;
+                size--;
+                return saved value
+        
+        runtime
+            O(n)
+                can improve using doubly LinkedList
+
+    checkInvariants
+        if size = 0, head & tail = nullptr
+        if size > 0, walk down the list while counting to verify size = # of nodes in list
+
+        runtime
+            O(n)
+
+which is better?
+    depends
+        AL : lots of indexing
+        LL : lots of insert/remove from front
+    
+why AL when we have array
+    easier for user : details hidden, size checking, easy debugging
