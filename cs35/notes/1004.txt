@@ -1,0 +1,108 @@
+2022.10.04.
+
+stacks & queues
+
+Orderd Collection
+    higher level abstract data type (ADT)
+        insert & remove
+    why use very constricted ways of handling elements
+
+    stack
+        push
+        pop
+        LIFO
+
+    queue
+        enqueue
+        dequeue
+        FIFO
+
+    Ordered Collection ADT
+    e.g.
+        template <typename T>
+        class OrderedCollection {
+            public:
+                virtual ~OrderedCollection() {}; // destructor
+                virtual void insert (T element) = 0;
+                virtual T remove() = 0;
+                virtual int getSize() = 0;
+                virtual bool isEmpty() = 0;
+                virtual T peek() = 0; // returns next element without removing it
+        };
+
+    e.g.
+        stack.push(3);
+        stack.push(7);
+        stack.push(5);
+        stack.peek(); // 5
+        stack.pop(); // 5 gone
+        stack.pop(); // 7 gone
+        stack.push(12);
+        stack.getSize(); 2
+    
+    e.g.
+        template <typename T>
+        class Queue : public OrderedCollection<T> {
+            public:
+                virtual ~OrderedCollection() {}; // destructor
+                virtual void enqueue (T element) = 0;
+                virtual T dequeue() = 0;
+                virtual int getSize() = 0;
+                virtual bool isEmpty() = 0;
+                virtual T peek() = 0; // returns next element without removing it
+        };
+    
+    e.g.
+        queue.enqueue(3);
+        queue.enqueue(7);
+        queue.enqueue(5);
+        queue.peek(); // 3
+        queue.dequeue; // 3 gone
+        queue.dequeue; // 7 gone
+        queue.enqueue(12);
+        queue.getSize(); 2
+    
+    Comparing behavior of stacks & queues
+        in the notes
+    
+    How to implement stacks & queues to make operations more quickly
+        LinkedStack & LinkedQueue
+            implement using LinkedList
+        
+        LinkedStack
+            push & pop
+                both @ front of list
+        LinkedQueue
+            enqueue
+                @ tail of list
+            dequeue
+                @ head of list
+    
+    Running time
+        in the notes
+        every operation O(1)
+
+Application
+    Find a path from Sci to Sharples
+        Input
+            a map
+        Output
+            path from start to goal
+            only visit each location at most once
+        
+        Things to consider
+            keep track of the path using "previous" pointer
+            for each location, keep track of whether its visited before
+
+        Search algorithm
+            pseudocode
+                in the notes
+            
+
+
+
+
+
+
+
+
