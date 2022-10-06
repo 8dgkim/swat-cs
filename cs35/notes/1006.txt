@@ -1,0 +1,37 @@
+2022.10.06.
+
+Search algorithm
+    last time used stack
+    this time how about queue?
+        in the notes
+    
+    difference in how search works
+        queue : breadth-first search; finds shortest(fewwest hops) path
+        stack : depth-first search; can be better for certain application
+
+Stack & Queue
+
+
+Induction Proof
+    problem
+        consider some algorithm with double-nested loops
+    proof outline
+        1. base case
+        2. inductive hypothesis
+        3. inductive step
+    why this works as a rigorous & convincing argument
+        domino analogy
+        only with integers
+    
+    e.g.
+        in the notes & GootNotes
+        show LHS = RHS
+    
+    e.g.
+        prove factorial function is correct by induction
+        begin by stating a recursive invariant
+        base case
+            n = 0;
+            n = 1;
+
+

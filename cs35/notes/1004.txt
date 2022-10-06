@@ -97,6 +97,7 @@ Application
         Search algorithm
             pseudocode
                 in the notes
+                using stack
             
 
 
