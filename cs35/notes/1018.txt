@@ -1,0 +1,51 @@
+2022.10.18.
+
+Missed class for swim test
+
+binary search
+    repeatedly reduce the size of search space by half
+    worst case
+        O(log2(n))
+    
+tree
+    collection of nodes
+    recursive
+
+binary tree
+    either
+        empty
+    or
+        consists of a node that contains links to 2 trees below it (left & right)
+
+terminology
+    node
+        data (key)  
+        pointers to left & right subtrees
+    children
+    parent
+    root
+    size
+    leaf
+    depth
+    height
+
+binary search tree (BST)
+    binary tree w/ special property governing all keys stored within nodes
+    property true at all nodes & helps w/ searching
+
+    property
+        all keys in left subtree < key at that node
+        all keys in right subtree > key at that node
+
+    adding a new key
+        search; add when reach empty tree
+    
+    best possible structure = full-packed tree
+        # nodes in full BT of height h = 2^(h + 1) - 1
+    
+    if tree n nodes
+        best case height: O(log2(n)) fully packed
+        worst case height: O(n) basically linked list
+
+
+    

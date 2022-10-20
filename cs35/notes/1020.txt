@@ -1,0 +1,79 @@
+2022.10.20.
+
+application
+    amazon; instagram; tiktok; internet archive
+    each entry in data storage has unique key that identifies it (username, email address, URL, ...)
+    application needs to find your individual data quickly when you log in to request it
+    key value
+
+dictionary ADT
+    k = key type
+    v = value type
+
+    behind real world application
+    need to be efficient
+
+if we use...
+    ArrayList
+    sorted ArrayList
+    BST (assume balanced)
+
+plan
+    implement dictionary ADT as BST
+
+BST
+    BT
+    binary search property
+        invariant true at every node
+
+implementation
+    LinkedBSTNode
+    LinkedBST
+
+full detail memory diagram
+
+implementing BST methods
+    recursion
+
+"get" method
+    pseudocode
+        V get(K key) // public method
+            return findInSubtree(root, key)
+
+        V findInSubtree(current, key) // private helper
+            // base cases
+            if current key == key
+                return current value
+            if current == null
+                throw error "key not found"
+            
+            // recursive cases
+            if key < current key
+                return findInSubtree(current left, key)
+            else // key > current key
+                return findInSubtree(current right, key)
+
+"insert" method
+    pseudocode
+        void insert(K key, V value)
+            // insert changes tree structure; update root
+            root - insertInSubtree(root, key, value)
+            size++
+        
+        node* insertInSubtree(current, key, value) // private helper
+            // base case
+            if current == null
+                create new node; store key & value
+                return pointer to that node
+            if key == current key
+                throw error "no duplicate keys allowed"
+            
+            // recursive key 
+            if key < current key
+                current left = insertInSubtree(current left, key, value)
+            if key > current key
+                current right = insertInSubtree(current right, key, value)
+
+"remove" method
+
+
