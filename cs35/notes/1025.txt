@@ -1,0 +1,106 @@
+2022.10.25.
+
+removing from a BST
+travering a BST
+
+
+"remove" method
+    s/p = successor or predecessor
+    find s/p
+    replace (key, value) of node with s/p (key, value)
+    remove s/p
+
+    depending on node location, remove should:
+        if leaf
+            delete
+        if 1 child
+            replace (key, value) w/ child (key, value)
+            remove child
+        if 2 children
+            find s/p
+            replace node (key, value) w/ s/p (key, value)
+            remove s/p
+        if not in the tree
+            throw error
+
+    finding predecessor key in BST
+        predecessor must be largest key in node's left subtree
+        rightmost node in the left subtree
+    finding successor key in BST
+        successor must be smallest key in node's right subtree
+        leftmost node in the right subtree
+
+    pseudocode
+        void remove(k key) // public method
+            root = removeFromSubtree(root, key)
+            size--
+
+        // predecessor version
+        node* removeFromSubtree(current, key) // private helper
+            if current == null
+                throw exception "key not found"
+            if key < current key
+                current left = removeFromSubtree(current left, key)
+                return current
+            else if key > current key
+                current right = removeFromSubtree(current right, key)
+                return current
+            else
+                if current left == null & current right == null // current == leaf
+                    delete current
+                    set current to null
+                    return current
+                if current left != null & current right != null // current has 2 children
+                    get current predecessor
+                    set current key to predecessor key
+                    set current value to predecessor value
+                    current left = removeFromSubtree(current left, predecessor key)
+                    return current
+                if current left == null // current has 1 child; right only
+                    temp = current right
+                    delete current
+                    return temp
+                if current right == null // current has 1 child; left only
+                    temp = current left
+                    delete current
+                    return temp
+
+travering a tree
+    goal: visit evey node in BST & generate list of (key, value) paris in particular order
+
+    types of traversal
+        pre order (NLR): visit root; left subtree; right subtree
+        post order (LRN): visit left subtree; right subtree; root
+        in order (LNR): visit left subtree; root; right subtree
+        level order (BFS): use BFS to go level-by-level
+
+    implement traversal
+        vector<pair<k, v>> traversePreOrder() // public method
+            make list to store result
+            buildPreOrderTraversal(root, list)
+            current list to vector
+            return vector
+        
+        void buildPreOrderTraversal(current, key) // private method which adds to list
+            // base case
+            if current == null
+                return
+            
+            // recursive case
+            else
+                add current key & value to list
+                buildPreOrderTraversal(current left, list)
+                buildPreOrderTraversal(current right, list)
+                return
+
+    change in implement
+        post order: move adding of current to after recursive calls
+        in order: move adding of current to between recursive calls
+                    
+                
+
+
+
+
+
+
