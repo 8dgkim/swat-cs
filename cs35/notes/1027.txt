@@ -1,0 +1,58 @@
+2022.10.27.
+
+// 199 computer issuess
+
+Rebalancing a BST
+    BST height h & size n
+        "get" --> O(h)
+
+    max height BST size n // worst case
+        height n
+    min height BST size n // best case
+        height O(log_2^n)
+
+AVL tree (Adelson-Velksii and Landis)
+    reminder
+        height: single node = 0; empty tree height = -1
+    https://en.wikipedia.org/wiki/AVL_tree
+
+    rebalancing trees with rotations
+        A < x < B < y < C
+        https://en.wikipedia.org/wiki/Tree_rotation
+    
+    some require TWO rotations
+        make it linear structure
+        do rotation to rebalance
+
+    pseudocode
+        // if subtree heights differ by at most 1, does nothing
+
+        void rebalance(node)
+            delta = (height of right subtree) - (height of left subtree)
+            if delta > 1 // right subtree too high
+                if node right's left height > node right's right height
+                    set node's right to rightRotate(node right)
+                node = leftRotate(node)
+            if delta < -1 // left subtree too high
+                if node left's left height > node left's right height
+                    set node's left to leftRotate(node left)
+                node = rightRotate(node)
+    
+    work (time complexity)
+        leftRotate rightRotate constant
+        overall constant
+    
+    recalculate height of node
+        pseudocode
+            void recalculateHeight(node)
+                if node left == null
+                    left_H = -1
+                else left_H = node left height
+                if node right == null
+                    ...
+    
+    insert
+        pseudocode
+            ...
+
+

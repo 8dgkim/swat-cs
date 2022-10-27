@@ -67,17 +67,17 @@ quick sort
         
         partition(array, left, right)
         // rearranges array[left ... right] using pivot element
-        // should return index where pivot element ends upper
+        // should return index where pivot element ends up
             pivot = right
             right--
             while (left <= right)
-                if array[left] =< array[pivot]
+                if array[left] <= array[pivot]
                     left++
                 else if array[right] >= array[pivot]
                     right--
                 else
                     swap(array, left, right)
-            swap(array, right, pivot) // put the pivot element into its place
+            swap(array, left, pivot) // put the pivot element into its place
             return left
     
     algo class (big O)
