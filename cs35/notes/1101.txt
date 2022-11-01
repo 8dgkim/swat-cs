@@ -1,0 +1,101 @@
+2022.11.01.
+
+review
+    dif btw AVL & BST
+        AVL == a type of BST w/ additional invariant that every node has children whose height differ by at most 1
+    how many rotations needed to rebalance
+        max 2
+        check every node along the path to the root O(h)
+    how tall BST w/ n nodes
+        max n
+        min log_2^n
+
+amortized analysis
+    worst case might be slow but rare; so giving worst case analysis runtime can be overly pessimistic
+    considers running time over a SEQUENCE of operations
+
+    e.g.
+        ArrayList insert
+        O(1) 
+    Note: "average" is special technical word; is different from "amortized"
+
+
+Priority Queue
+    type of queue where every item has associated priority
+    queue ordered from highest to lowest priority (max priority queue)
+    priorities do not need to be unique
+
+    e.g.
+        homework to do list
+        airplane boarding
+        shipping packages
+        emergency room
+        CS course lotteries
+
+    priority queue ADT
+        template priority type P & value V
+            void insert(P, V)
+            V remove() // return ...
+            V peek() // return highest priority value
+            P peekPriority() // return highest priority
+            bool isEmpty()
+            int getSize()
+
+    implement pq ADT to make it efficient
+        keep highest priority item as last value in the array
+        keep entire array in sorted order lowest to highest priority
+
+        operation           sorted array
+        void insert(P, V)   O(n)
+        V remove()          O(1)
+        V peek()            O(1)
+        P peekPriority()    O(1)
+
+Heap
+    complete binary tree
+    invariant: for every node in heap,
+        that node's priority >= priorities of all its descendents
+
+    heap operations
+        must make sure complete binary tree & satisfy heap invariant
+
+    heap insert
+        algorithm
+            1. add new element
+            2. fix heap by bubbling up
+            3. increment size
+        
+        bubbleup(node)
+            if element node == root
+                return
+            if parent priorty < node priority
+                swap node & parent contents
+                bubbleup(parent)
+    
+    heap remove
+        algorithm
+            1. save value at root
+            2. replace root data w/ data from last (rightmost leaf) node
+            3. fix heap by bubbling down
+            4. decrement size
+            5. return saved value
+        
+        bubbledown(node)
+            if element node == leaf
+                return
+            if parent priorty < max(child priorities)
+                swap node & its max priorty child contents
+                bubbledown(that child)
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,7 +9,7 @@ Rebalancing a BST
     max height BST size n // worst case
         height n
     min height BST size n // best case
-        height O(log_2^n)
+        height log_2^n
 
 AVL tree (Adelson-Velksii and Landis)
     reminder
