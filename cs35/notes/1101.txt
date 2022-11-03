@@ -34,7 +34,7 @@ Priority Queue
 
     priority queue ADT
         template priority type P & value V
-            void insert(P, V)
+            void insert(P priority, V value) // priorities not necessarily unique
             V remove() // return ...
             V peek() // return highest priority value
             P peekPriority() // return highest priority

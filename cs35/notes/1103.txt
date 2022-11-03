@@ -1,0 +1,90 @@
+2022.11.03.
+
+review
+    complete tree
+        binary tree; all levels full except bottom, which is filled left-to-right
+
+heap implementation
+    operations that should be fast
+        ...
+    so represent heap with an array (c++ vector)
+        store items in the array in level order
+        no gaps because complete tree
+
+implement priority queue as heap
+    private data
+        vector<pair<p,v>> heapVector
+    helper functions
+        int getLeft(int index)
+            return 2 * index + 1
+        int getRight(int index)
+            return 2 * index + 2
+        int getParent(int index)
+            return (index - 1) / 2
+    
+    public methods
+        V peek() {
+            if (heapVector.size == 0)
+                throw error "can't peek empty heap"
+            else
+                return heapVector[0].second
+        }
+
+        P peekPriority() {
+            if (heapVector.size == 0)
+                throw error "can't peek empty heap"
+            else
+                return heapVector[0].first
+        }
+
+        insert
+            void insert(P priority, V value) {
+                heapVector.push_back(pair <p,v> (priority, value))
+
+                bubbleUp(heapVector.size - 1)
+            }
+
+            void bubbleUp(int index) {
+                if (index == 0)
+                    return
+                else {
+                    int par = getParent(index)
+                    if (heapVector[par].first < heapVector[index].first) {
+                        swap(heapVector, index, parent)
+                        bubbleUp(parent)
+                    }
+                }
+            }
+        
+        remove
+            V remove() {
+                if (heapVector.size == 0)
+                    throw error "can't remove from empty heap"
+                V saved = heapVector[0].second
+                int last = heapVector.size - 1
+                heapVector[0] = heapVector[last]
+                heapVector.pop.back()
+                bubbleDown(0)
+                return saved
+            }
+
+            void bubbleDown(int index) {
+                int l = getLeft(index)
+                if (l >= heapVector.size) // no children
+                    return
+                int r = getRight(index)
+                int maxChild
+                if (r >= heapVector.size) { // only left child
+                    maxChild = l
+                } else { // two children
+                    if (heapVector[l].first >= heapVector[r].first)
+                        maxChild = l
+                    else
+                        maxChild = r
+                }
+                if (heapVector[index].first < heapVector[maxChild].first) {
+                    swap(heapVector, index, maxChild)
+                    bubbleDown(maxChild) 
+                }
+            }
+
