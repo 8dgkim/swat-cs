@@ -1,0 +1,58 @@
+2022.11.10.
+
+hash table review
+
+Linear Dictionary
+    store its data in a c++ vector of type vector<pair<K, V>>
+    most of its operations O(n)
+    not faster; but simpler
+
+hash table implementation
+    private data
+        size
+        capacity
+        dynamic array of static Linear Dictionaries
+    
+    each chain -> Linear Dictionary
+        short s.t. O(n) operations would be O(1)
+        static; so delete the array only
+    
+    e.g.
+        Dictionary<int, string> *d = new HashTable<int, string>();
+    
+    ensureCapacity
+        doubles capacity by creating new array
+        rehashes all keys and adds them to new array
+        deletes old array, sets table to new array
+        sets capacity to new capacity
+    
+methods
+    each HashTable is array (called "table") of LinearDictionaries
+
+    V get(K key)
+        int index = hash(key, capacity)
+        return table[index].get(key)
+    
+    void insert(K key, V value)
+        int index = hash(key, capacity)
+        table[index].insert(key, value)
+        size++
+        float load = float(size) / capacityif load > maxLoadFactor
+            ensureCapacity()
+    
+    void remove(K key)
+        int index = hash(key, capacity)
+        table[index].remove(key)
+        size--
+    
+    vector<K> getKeys()
+
+running time of all Dictionary methods when implemented with HashTable
+    Assumptions
+        good hash function
+        on average, each LinearDictionary small
+    amortized O(1)
+    O(capacity)
+        vector<K> getKeys()
+        vector<pair<K, V>> getItems()
+
