@@ -1,0 +1,58 @@
+2022.11.15.
+
+HashTable review
+
+Dictionary ADT
+    (fastest to slowest)
+    hash table O(1)
+    BST O(logn)
+    AVL tree O(height)
+    linear dictionary O(n)
+
+reasons not to use hash table
+    need to save memory
+    need to use getItems() or getKeys() frequently
+    if use case simple or data set small
+    if don't have good hash function
+    if want to find smallest/largest key (because hash tables don't order the keys)
+
+graph
+    way to represent relationship between entities
+    G = (V, E) where
+        V = set of vertices
+        E = edges
+    
+    measuring running time of an algorithm w/ graph as input
+        n = |V| = # of vectices
+        m = |E| = # of edges
+    
+    applications of graphs
+        e.g.
+            maps
+            social networks
+    
+    ...
+
+
+    path
+        sequence of edges where destination of each edge is source of next one
+    
+    connected
+        two vertices connected if exists path between them
+        graph connected if evrey pair of vertices connected
+    
+    simple
+        if graph has no self loops and no duplicate edges
+    
+    tree is graph
+
+    graph ADT
+        template 3 things
+            V vertex label type (must be unique)
+            E edge label type (duplicates allowed)
+            W edge weight type (usually numerical)
+
+        methods
+    
+    applications
+    
