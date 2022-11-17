@@ -1,0 +1,49 @@
+2022.11.17.
+
+review
+    lists: represent linear relationship
+    trees: represent hierarchical relationship
+    graphs: represent general relationship
+
+    graph G = (V, E)
+
+    graph ADT
+        templated on 3 things
+            V vertex label type (must be unique)
+            E edge label type (duplicates allowed)
+            W edge weight type (usually numerical)
+
+Adjacency matrix
+    idea: store 2D array of bits
+
+Adjacency dictionary
+    2 data members
+    STLHashTable<V, bool> vertices;
+    STLHashTable<V, STLHashTable<V, pair<E, W>>*> edges;
+
+    vertices HashTable
+        capacity V
+    edges HashTable
+        capacity E
+    
+    store both vertices & edges as data because there may be some vertices w/ no outgoing edges
+
+Graph<V, E, W>
+    methods & their runtime
+
+applications of graphs
+    shortest path btw two vertices
+    least expensive path btw two vertices
+    possible to get from one vertex to another specific vertex?
+    possible to reach every other vertex from a specific vertex?
+    possible to reach every vertex from every other vertex?
+
+reachability
+    DFS
+    pseudocode
+
+3 graph algorithm
+    bool reachableDFS(V start, V end, Graph<V, E, W>* g)
+    vector<V> shortestLengthPathBFS(V start, V end, Graph<V, E, W>* g)
+    Dictionary<V, W>* simpleSourceShortestPath(V start, Graph<V, E, W>* g)
+
