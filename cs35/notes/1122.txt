@@ -1,0 +1,29 @@
+2022.11.22.
+
+
+orbject oriented programming (OOP)
+
+quartet
+    requirements analysis
+        nouns
+            dice
+                die
+            round
+            point
+            player
+            box
+            score card
+            requirement
+            reroll
+
+        verbs
+            roll
+            select
+            require
+            sum
+            permit
+            produce
+            earn
+            meet
+
+    UML (Unified Modeling Language) Class Diagram
