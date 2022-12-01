@@ -1,0 +1,20 @@
+2022.12.01.
+
+
+singleSourceShortestPath (Dijkstra algorithm)
+    priorityQueue
+    pseudocode
+
+runtime analysis
+    n = |V| vertices & m = |E| edges
+
+    reachableDFS
+        O(n + m)
+    shortestLengthPathBFS
+        O(n + m + n) = O(n + m)
+    Dijkstra algorithm
+        O((m + n) log_2^(n))
+
+topological sort
+    
+
